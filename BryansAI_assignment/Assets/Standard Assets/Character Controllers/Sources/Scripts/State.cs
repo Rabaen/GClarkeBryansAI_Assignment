@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+//state creation class
 public abstract class State
 {
     protected GameObject myGameObject;

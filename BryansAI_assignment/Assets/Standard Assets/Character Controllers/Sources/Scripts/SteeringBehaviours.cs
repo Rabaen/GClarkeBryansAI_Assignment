@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
-
+//this script holds steering behaviours
 public class SteeringBehaviours : MonoBehaviour {
 
     // Flags to enable or disable the variour behaviours
@@ -137,7 +137,7 @@ public class SteeringBehaviours : MonoBehaviour {
 
     Vector3 Evade()
     {
-        float dist = (evadeTarget.transform.position - transform.position).magnitude;
+        //float dist = (evadeTarget.transform.position - transform.position).magnitude;
         float lookAhead = maxSpeed;
 
         Vector3 targetPos = evadeTarget.transform.position + (lookAhead * evadeTarget.GetComponent<SteeringBehaviours>().velocity);

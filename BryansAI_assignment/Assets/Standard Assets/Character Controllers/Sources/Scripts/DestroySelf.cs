@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//this script used by ships to destroy themselves when damaged to 0 health, call explosion and set bool in gamemanager
 public class DestroySelf : MonoBehaviour 
 	{
 		

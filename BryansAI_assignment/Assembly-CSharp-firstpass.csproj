@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\AttackingState.cs" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\CameraEvents.cs" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\CastIntro.cs" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.cs" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\DestroySelf.cs" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\DestroyWhenHit.cs" />

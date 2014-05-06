@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//this script call explosion when something hits its collider and also seeks nearest tagged enemy, script used by enemy torpedo.
 public class DestroyWhenHit : MonoBehaviour 
 {
 
@@ -9,7 +9,7 @@ public class DestroyWhenHit : MonoBehaviour
 	GameObject[] gos;
 	public GameObject closest;
 
-	float howfar;
+	//float howfar;
 
 	void Update()
 	{
@@ -58,7 +58,7 @@ public class DestroyWhenHit : MonoBehaviour
 			{
 				closest = go;
 				distance = curDistance;
-				howfar = curDistance;
+				//howfar = curDistance;
 			}
 		}
 		return closest;

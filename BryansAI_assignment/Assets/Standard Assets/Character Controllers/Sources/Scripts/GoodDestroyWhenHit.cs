@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
-
+//this script used by good guy torpedo to track nearest enemy and destroy self on collision or after set time.
 public class GoodDestroyWhenHit : MonoBehaviour 
 {
 	
@@ -9,7 +9,7 @@ public class GoodDestroyWhenHit : MonoBehaviour
 	GameObject[] gos;
 	public GameObject closest;
 	
-	float howfar;
+	//float howfar;
 	
 	void Update()
 	{
@@ -62,7 +62,7 @@ public class GoodDestroyWhenHit : MonoBehaviour
 			{
 				closest = go;
 				distance = curDistance;
-				howfar = curDistance;
+				//howfar = curDistance;
 			}
 		}
 		return closest;

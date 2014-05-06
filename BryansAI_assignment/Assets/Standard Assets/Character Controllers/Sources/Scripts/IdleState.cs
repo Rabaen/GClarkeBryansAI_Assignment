@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script used to set paths/enemy for ships in various circumstances, calls attack state on nearby enemy.
 public class IdleState:State
 {
-    static Vector3 initialPos = Vector3.zero;
+    //static Vector3 initialPos = Vector3.zero;
 
     GameObject enemyGameObject;
 	public GameObject Manager;

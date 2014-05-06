@@ -46,8 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\DreamWipe.js" />
-     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ScreenWipe.js" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\TurretScript.js" />
      <Compile Include="Assets\Standard Assets\Particles\Legacy Particles\TimedObjectDestructor.js" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-
+//used by evade state to move away from target when near...tease
 public class TeaseState:State
 {
     GameObject teasee;

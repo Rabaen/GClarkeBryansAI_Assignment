@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
-
+//this script manages various game events, setting ships speeds for timing of runs mainly
 public class GameManager : MonoBehaviour {
 
 	public GameObject Sador;

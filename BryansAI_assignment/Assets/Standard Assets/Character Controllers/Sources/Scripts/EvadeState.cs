@@ -6,7 +6,7 @@ using UnityEngine;
 
 class EvadeState:State
 {
-    GameObject teasee;
+    GameObject teasee;  //object to evade
     //public override string Description()
     //{
     //    return "Evade State";

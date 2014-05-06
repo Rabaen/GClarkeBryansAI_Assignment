@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//this script scrolls text from bottom to top of screen like movie credits and fades them in and out via alpha settings
 public class ScrollerText : MonoBehaviour
 {
 	public string[] intro;

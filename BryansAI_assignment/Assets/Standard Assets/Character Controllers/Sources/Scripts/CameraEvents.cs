@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//This script attached to camera and called by events in camera animation
 public class CameraEvents : MonoBehaviour 
 {
 	public GUITexture PilotImage;
 
-	public bool ValkyrAttack = false;
+	public bool ValkyrAttack = false;  //bools to activate images on screen
 	public bool GeltAttack = false;
 	public bool KaymanAttack = false;
 	public bool NestorAttack = false;
@@ -18,7 +18,7 @@ public class CameraEvents : MonoBehaviour
 
 	public bool TextureOn = false;
 
-	public Texture2D Valkyr;
+	public Texture2D Valkyr;  //stores images
 	public Texture2D Gelt;
 	public Texture2D Kayman;
 	public Texture2D Nestor;
@@ -26,16 +26,16 @@ public class CameraEvents : MonoBehaviour
 	public Texture2D Chad;
 	public Texture2D Sador;
 
-	public Texture2D defaultBlank;
+	public Texture2D defaultBlank;  //default to blank image
 	//public Texture2D Valkyr;
-	public float DestroyTimer = 5;
+	public float DestroyTimer = 5;  //time image is on screen
 	public GameObject GameManagerCamLink;
 
-	public Vector3 offSet = new Vector3 (3, 5, 0);
-	public GUIText title3;
+	public Vector3 offSet = new Vector3 (-5, 10, 0);  //offset for explosion
+	public GUIText title3;  //stores End text
 	//audio slots
 
-	public AudioClip ValkyrAudio;
+	public AudioClip ValkyrAudio;  //stores audio to be played with images
 	public AudioClip GeltAudio;
 	public AudioClip KaymonAudio;
 	public AudioClip NestorAudio;
@@ -45,7 +45,7 @@ public class CameraEvents : MonoBehaviour
 	public AudioClip Kaymon2Audio;
 	public AudioClip SadorDeath;
 
-	public Transform explosionPrefab;
+	public Transform explosionPrefab;  //explosion store
 	// Use this for initialization
 	void Start () 
 	{
@@ -60,7 +60,7 @@ public class CameraEvents : MonoBehaviour
 			DestroyTimer -= Time.deltaTime;
 		}
 
-		if (DestroyTimer <= 0) 
+		if (DestroyTimer <= 0)   //turn off images when timer runs out
 		{
 			PilotImage.guiTexture.texture = defaultBlank;
 			DestroyTimer = 5;
@@ -75,14 +75,14 @@ public class CameraEvents : MonoBehaviour
 			SadorDeathBool = false;
 		}
 
-		if(KaymanAttack == true && DestroyTimer < 1)
+		if(KaymanAttack == true && DestroyTimer < 1) //play kaymon second audtion when first is over
 		{
 			audio.clip = Kaymon2Audio;
 			audio.Play();
 		}
 	}
 
-	void OnGUI()
+	void OnGUI()  //display images on gui
 	{
 		if (ValkyrAttack == true && TextureOn == true) 
 		{
@@ -131,7 +131,7 @@ public class CameraEvents : MonoBehaviour
 		}
 	}
 
-	void ValkyrGo()
+	void ValkyrGo()  //methods to call images and audio, activated in Camera Animation events
 	{
 		ValkyrAttack = true;
 		TextureOn = true;
@@ -232,7 +232,7 @@ public class CameraEvents : MonoBehaviour
 		Instantiate (explosionPrefab, Sador.transform.position, Sador.transform.rotation);
 		Instantiate (explosionPrefab, Sador.transform.position + offSet + offSet, Sador.transform.rotation);
 		Instantiate (explosionPrefab, Sador.transform.position + offSet, Sador.transform.rotation);
-		Instantiate (explosionPrefab, Sador.transform.position - offSet - offSet, Sador.transform.rotation);
+		Instantiate (explosionPrefab, Sador.transform.position + offSet - offSet, Sador.transform.rotation);
 		Instantiate (explosionPrefab, Sador.transform.position - offSet, Sador.transform.rotation);
 	}
 
