@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour {
 			//Nell.GetComponent<StateMachine> ().ChangeState (new IdleState (Nell, Sador));
 			Girl.GetComponent<SteeringBehaviours>().offsetPursueTarget = Dope;
 			Girl.GetComponent<SteeringBehaviours>().OffsetPursuitEnabled = false;
+			Girl.GetComponent<SteeringBehaviours>().offsetPursuitOffset = new Vector3(10,10,10);
 			Girl.GetComponent<SteeringBehaviours>().SeekEnabled = true;
 			Girl.GetComponent<SteeringBehaviours>().seekPos = Planet.transform.position;
 			Girl.GetComponent<SteeringBehaviours> ().maxSpeed = 20;

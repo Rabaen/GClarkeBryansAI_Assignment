@@ -31,6 +31,9 @@ public class CameraEvents : MonoBehaviour
 	public float DestroyTimer = 5;  //time image is on screen
 	public GameObject GameManagerCamLink;
 
+	public GameObject Girl;
+	public GameObject Dope;
+
 	public Vector3 offSet = new Vector3 (-10, 20, -10);  //offset for explosion
 	public GUIText title3;  //stores End text
 	//audio slots
@@ -223,6 +226,9 @@ public class CameraEvents : MonoBehaviour
 		GameObject Nell = GameObject.Find ("NellShip");
 		Instantiate (explosionPrefab, Nell.transform.position, Nell.transform.rotation);
 		GameManagerCamLink.GetComponent<GameManager> ().NellShipDead = true;
+		Girl.GetComponent<SteeringBehaviours>().offsetPursueTarget = Dope;
+		Girl.GetComponent<SteeringBehaviours>().OffsetPursuitEnabled = false;
+		Girl.GetComponent<SteeringBehaviours>().offsetPursuitOffset = new Vector3(10,10,10);
 		Destroy (Nell);
 		Destroy (Sador);
 
