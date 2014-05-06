@@ -31,7 +31,7 @@ public class CameraEvents : MonoBehaviour
 	public float DestroyTimer = 5;  //time image is on screen
 	public GameObject GameManagerCamLink;
 
-	public Vector3 offSet = new Vector3 (-5, 10, 0);  //offset for explosion
+	public Vector3 offSet = new Vector3 (-10, 20, -10);  //offset for explosion
 	public GUIText title3;  //stores End text
 	//audio slots
 
@@ -167,7 +167,7 @@ public class CameraEvents : MonoBehaviour
 	{
 			GameObject cowboy1 = GameObject.Find ("Cowboy");
 			cowboy1.GetComponent<DestroySelf>().enabled = true;
-			cowboy1.GetComponent<DestroySelf>().HealthCount = 2;
+			cowboy1.GetComponent<DestroySelf>().HealthCount = 10;
 			CowboyAttack = true;
 			TextureOn = true;
 			audio.clip = CowboyAudio;
@@ -196,8 +196,10 @@ public class CameraEvents : MonoBehaviour
 
 		GameObject die = GameObject.Find ("FighterLead");
 		Instantiate (explosionPrefab, die.transform.position, die.transform.rotation);
+		Instantiate (explosionPrefab, die.transform.position, die.transform.rotation);
 		Destroy (die);
 		GameObject cowboy2 = GameObject.Find ("Cowboy");
+		Instantiate (explosionPrefab, cowboy2.transform.position, cowboy2.transform.rotation);
 		Instantiate (explosionPrefab, cowboy2.transform.position, cowboy2.transform.rotation);
 		Destroy (cowboy2);
 		GameManagerCamLink.GetComponent<GameManager> ().CowboyShipDead = true;

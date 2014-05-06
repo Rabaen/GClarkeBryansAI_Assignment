@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject Girl;
 	public GameObject Fighter;
 
+	public GameObject Dope;
+
 	public GameObject Planet;
 
 
@@ -91,7 +93,17 @@ public class GameManager : MonoBehaviour {
 	void Update () 
 	{
 		//call image and audio as ships attack sador
-
+		if (NellShipDead == true) 
+		{
+			
+			//Girl.GetComponent<StateMachine> ().ChangeState (new IdleState (Girl,Dope));
+			//Nell.GetComponent<StateMachine> ().ChangeState (new IdleState (Nell, Sador));
+			Girl.GetComponent<SteeringBehaviours>().offsetPursueTarget = Dope;
+			Girl.GetComponent<SteeringBehaviours>().OffsetPursuitEnabled = false;
+			Girl.GetComponent<SteeringBehaviours>().SeekEnabled = true;
+			Girl.GetComponent<SteeringBehaviours>().seekPos = Planet.transform.position;
+			Girl.GetComponent<SteeringBehaviours> ().maxSpeed = 20;
+		}
 
 
 
@@ -129,16 +141,7 @@ public class GameManager : MonoBehaviour {
 			Nell.GetComponent<SteeringBehaviours> ().maxSpeed = 15;
 		}
 
-		if (NellShipDead == true) 
-		{
 
-			//Fighter.GetComponent<StateMachine> ().ChangeState (new IdleState (Fighter, Nell));
-			//Nell.GetComponent<StateMachine> ().ChangeState (new IdleState (Nell, Sador));
-			Girl.GetComponent<SteeringBehaviours>().OffsetPursuitEnabled = false;
-			Girl.GetComponent<SteeringBehaviours>().SeekEnabled = true;
-			Girl.GetComponent<SteeringBehaviours>().seekPos = Planet.transform.position;
-			Girl.GetComponent<SteeringBehaviours> ().maxSpeed = 20;
-		}
 
 
 	}

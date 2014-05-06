@@ -13,6 +13,9 @@ public class GoodDestroyWhenHit : MonoBehaviour
 	
 	void Update()
 	{
+
+		FindClosestEnemy ();
+
 		DestroyTimer -= Time.deltaTime;
 		
 		if (DestroyTimer <= 1) 
@@ -20,7 +23,7 @@ public class GoodDestroyWhenHit : MonoBehaviour
 			Instantiate(explosionPrefab, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}
-		FindClosestEnemy ();
+
 		gameObject.GetComponent<SteeringBehaviours> ().seekPos = closest.transform.position;
 		//Debug.Log (howfar);
 
